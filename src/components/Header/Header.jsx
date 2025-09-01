@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Logo from '../../assets/Logo.png'
 import Mail from '../../assets/Important-Mail.png'
 import Info from '../../assets/Info-Squared.png'
@@ -7,31 +8,41 @@ import { slide as Menu } from 'react-burger-menu'
 import styles from './Header.module.scss'
 
 export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleStateChange = (state) => {
+    setMenuOpen(state.isOpen)
+  }
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
+
   return (
     <header className={styles.header}>
-      {/* Logo altid synligt */}
       <div className={styles.logoWrapper}>
         <img src={Logo} alt="Logo" className={styles.logo} />
       </div>
-
-      {/* Burger-menu til mobil */}
       <div className={styles.mobileMenu}>
-        <Menu right>
-          <Link className={styles.menuItem} to="/kategori">Kategori</Link>
-          <Link className={styles.menuItem} to="/opret">Opret annonce</Link>
-          <Link className={styles.menuItem} to="/mail">
+        <Menu 
+          right
+          isOpen={menuOpen}
+          onStateChange={handleStateChange}
+          customCrossIcon={<span className={styles.closeIcon}>×</span>}
+        >
+          <Link onClick={closeMenu} className={styles.menuItem} to="/kategori">Kategori</Link>
+          <Link onClick={closeMenu} className={styles.menuItem} to="/opret">Opret annonce</Link>
+          <Link onClick={closeMenu} className={styles.menuItem} to="/mail">
             <img src={Mail} alt="Mail" className={styles.icon} /> Mail
           </Link>
-          <Link className={styles.menuItem} to="/info">
+          <Link onClick={closeMenu} className={styles.menuItem} to="/info">
             <img src={Info} alt="Info" className={styles.icon} /> Info
           </Link>
-          <Link className={styles.menuItem} to="/account">
+          <Link onClick={closeMenu} className={styles.menuItem} to="/account">
             <img src={Account} alt="Account" className={styles.icon} /> Account
           </Link>
         </Menu>
       </div>
-
-      {/* Desktop navigation */}
       <nav className={styles.desktopNav}>
         <ul>
           <li>Kategori</li>
