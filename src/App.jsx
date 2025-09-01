@@ -5,6 +5,7 @@ import { ProductPage } from "./pages/ProductPage"
 import { LoginPage } from "./pages/LoginPage"
 import { ItemListSort } from './components/ItemListSort/ItemListSort'
 import { ItemDetails } from "./components/ItemDetails/ItemDetails"
+import './reset.scss'
 
 function App() {
 
