@@ -15,7 +15,6 @@
   cursor: pointer;
 }
 
-/* ---- Mobile vs Desktop ---- */
 .mobileMenu {
   display: block;
 }
@@ -52,14 +51,16 @@
   }
 }
 
-/* ---- react-burger-menu globale styles ---- */
 :global {
   .bm-burger-button {
-    position: fixed;
+    position: relative; 
     width: 30px;
     height: 25px;
-    right: 20px;
-    top: 20px;
+  }
+
+  .bm-menu-wrap {
+    top: 0;
+    height: 100%;
   }
 
   .bm-burger-bars {
@@ -69,13 +70,13 @@
   .bm-menu {
     background: #fff;
     padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+    font-size: 1.2em;
   }
 
   .bm-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     padding: 0.8em 0;
     color: #373a47;
     text-decoration: none;
@@ -86,7 +87,7 @@
   }
 
   .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -98,4 +99,11 @@
 .icon {
   height: 20px;
   width: 20px;
+}
+
+.closeIcon {
+  font-size: 2rem;
+  line-height: 1;
+  color: #373a47;
+  cursor: pointer;
 }

@@ -1,8 +1,8 @@
-import style from './Footer.module.scss'
+import styles from './Footer.module.scss'
 
 export const Footer = () => {
   return (
-    <footer className={style.Footer}>
+    <footer className={styles.Footer}>
       <ul>
         <h1>Nyhedsbrev</h1>
         <p>Vil du være med på den grønne front? Tilmeld dig vores nyhedsbrev og få de seneste klima opdateringer direkte i din indbakke</p>
