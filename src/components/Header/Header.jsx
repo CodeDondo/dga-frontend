@@ -21,7 +21,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logoWrapper}>
-        <img src={Logo} alt="Logo" className={styles.logo} />
+        <Link to="/"><img src={Logo} alt="Logo" className={styles.logo} /></Link>
       </div>
       <div className={styles.mobileMenu}>
         <Menu 
