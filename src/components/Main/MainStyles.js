@@ -12,3 +12,11 @@ export const MainContainer = styled.section`
         align-items: center;
     }
 `
+export const ImageWrapper = styled.figure`
+    display: flex;
+    flex-direction: column;
+
+    @media(min-width: 768px) {
+        flex-direction: row;
+    }
+`
