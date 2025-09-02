@@ -1,7 +1,7 @@
 
 /*Destructure assignment af props*/
 export const ContentWrapper = ({ title, description, subtitle, children }) => {
-    document.title = title || "Mortens boilerplate"
+    document.title = title || "Den grønne avis"
 
     if (description) {
         const meta = document.querySelector('meta[name="description"]')
