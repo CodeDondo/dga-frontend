@@ -9,22 +9,26 @@ export const ItemList = () => {
     if (loading) return <div>loading...</div>
     if (error) return <div>{error}</div>
     return (
-        <ul className={styles.grid}>
-            {itemList.slice(0, 6).map(item => {
-                const { id, name, image, slug } = item
-                return (
-                    <li key={id} className={styles.item}>
-                        <Link to={`${slug}`} className={styles.link}>
-                            <div className={styles.imageWrapper}>
-                                <img src={image} alt={name} className={styles.image} />
-                                <div className={styles.overlay}>
-                                    <span>{name}</span>
+        <>
+        <h3>Udvalgte produkter:</h3>
+            <ul className={styles.grid}>
+                {itemList.slice(0, 6).map(item => {
+                    const { id, name, image, slug } = item
+
+                    return (
+                        <li key={id} className={styles.item}>
+                            <Link to={`${slug}`} className={styles.link}>
+                                <div className={styles.imageWrapper}>
+                                    <img src={image} alt={name} className={styles.image} />
+                                    <div className={styles.overlay}>
+                                        <span>{name}</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </Link>
-                    </li>
-                )
-            })}
-        </ul>
+                            </Link>
+                        </li>
+                    )
+                })}
+            </ul>
+        </>
     )
 }

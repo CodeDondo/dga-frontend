@@ -8,6 +8,7 @@ export const MissionStatement = styled.figure`
 export const MainContainer = styled.section`
     img {
         display: block;
+        margin: 1rem auto;
         align-items: center;
     }
 `
